@@ -4,6 +4,29 @@
 
 Mineradio 是一款 Windows 桌面沉浸式音乐播放器，把搜索播放、歌词舞台、粒子视觉、3D 歌单架和完整桌面模式组合成一个更接近现场感的私人音乐空间。
 
+> ### 🐧 Linux 构建版(本 fork)
+>
+> 本仓库是 [XxHuberrr/Mineradio](https://github.com/XxHuberrr/Mineradio) 的 **Linux 移植 fork**(自用为主,欢迎任何人取用)。官方仅发布 Windows 安装包;Linux 版由 [`linux` 分支](https://github.com/kyrie2to11/Mineradio-Linux/tree/linux) 添加的打包配置构建,GitHub Actions **每日自动同步上游**,官方发新版后自动产出 deb / AppImage。
+>
+> **安装**:到 [Releases](https://github.com/kyrie2to11/Mineradio-Linux/releases) 下载最新 `linux-v*` 的附件——
+>
+> ```bash
+> # deb(Ubuntu/Debian,装到 /opt/Mineradio)
+> sudo apt install ./Mineradio-<版本>-amd64.deb
+>
+> # 或 AppImage(免安装)
+> chmod +x Mineradio-<版本>-x86_64.AppImage && ./Mineradio-<版本>-x86_64.AppImage
+> ```
+>
+> deb 安装后若双击无反应(chrome-sandbox 权限):
+> `sudo chown root:root /opt/Mineradio/chrome-sandbox && sudo chmod 4755 /opt/Mineradio/chrome-sandbox`
+>
+> ⚠️ 应用内"检查更新"指向上游的 Windows 包,Linux 下请忽略;升级请继续从本仓库 Releases 下载。移植原理与自行构建见 [`linux` 分支的 README-LINUX.md](https://github.com/kyrie2to11/Mineradio-Linux/blob/linux/README-LINUX.md)。
+
+---
+
+*以下为上游原版 README(Windows 版说明):*
+
 ## 立即下载 Windows 安装包
 
 > 安装包可从夸克盘、百度云、蓝奏云或 GitHub Release 手动下载；软件内更新入口仍只打开网盘线路，不读取 Release 附件。
