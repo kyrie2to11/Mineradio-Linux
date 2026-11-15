@@ -1,5 +1,50 @@
 # Mineradio
 
+## 🌐 Mineradio 官网：[mineradio.cn](https://mineradio.cn/)
+
+> [!IMPORTANT]
+> **Mineradio 官网：<https://mineradio.cn/>**
+>
+> 请收藏官网，从官网进入下载页，避免误入同名网站或第三方下载页。
+> [官网下载入口](https://mineradio.cn/download.html) · [官网链接的网页版：mineradio.art](https://mineradio.art/)
+
+> **项目状态：长期停更**
+>
+> 目前因个人原因，Mineradio 项目处于长期停更状态。感兴趣的个人玩家可随意使用本项目进行创作，也可以自行修改和修复 bug。希望各位玩得开心，也希望世界和平，享受我们的音乐。
+>
+> 本仓库保留公开源码、历史版本和下载说明，方便个人玩家 Fork、建立分支或制作二创版本。
+
+## 认准官网，避免走错下载页
+
+> [!WARNING]
+> **搜索结果标题中的“官网”“官方版”“最新版”，不代表该页面就是 Mineradio 官网。**
+> 请检查地址栏，认准 **`mineradio.cn`**；安装包与网盘链接请从[官网下载页](https://mineradio.cn/download.html)进入。
+> **已确认冒充官方入口的域名：`mineradiobfq.cn`。请勿误入。**
+
+### 仿冒官网 / 官方入口：请勿误入
+
+**`mineradiobfq.cn` 不是 Mineradio 官网。请勿从该站下载安装包、提交账号信息或付款；请认准 [mineradio.cn](https://mineradio.cn/)。**
+
+| 仿冒域名（仅供辨识） | 已核查的冒充方式 | 正确入口 |
+| --- | --- | --- |
+| `mineradiobfq.cn` | 页面使用 Mineradio 名称、MR 标识和产品截图；页脚自称“Mineradio官方入口与使用指南站点”，并提供该站自己的网盘下载入口。 | [Mineradio 官网](https://mineradio.cn/) · [官网下载页](https://mineradio.cn/download.html) |
+
+核查日期：**2026-11-09**。以上判定针对“冒充官方身份”，未检测该站安装包，不据此声称其含有恶意程序。域名以纯文本展示，避免误点；同名、相似拼写或加上 `bfq` 等后缀，都不代表官方身份。官网链接的网页版 `mineradio.art` 不在此名单内。
+
+### 第三方软件下载页：认清页面归属
+
+以下是容易混淆的**第三方介绍 / 下载页面示例，并非 Mineradio 官网**。仅供辨识，不作为下载推荐。核查日期：**2026-11-09**。
+
+| 非官网页面 | 页面上的字样或信息 | 如何辨识 |
+| --- | --- | --- |
+| `shouyou.3dmgame.com` · [3DM 页面](https://shouyou.3dmgame.com/android/555111.html) | 标题为“Mineradio 官方版”，列出的版本为 `1.12`。 | 这是 3DM 的软件下载页；“官方版”字样不能证明页面由 Mineradio 官方运营。 |
+| `cr173.com` · [西西页面](https://www.cr173.com/soft/1670750.html) | 标题为“Mineradio音乐软件官方版”，其“官方网站”字段另行指向 `mineradio.cn`。 | 软件站页面与它引用的官网是两个不同入口，请进入官网获取下载信息。 |
+| `5577.com` · [5577 页面](https://www.5577.com/s/735837.html) | 标题含“最新版官方”，其“应用官网”字段指向 `mineradio.cn`。 | 不要仅凭“最新版”字样选包；请以官网下载页公布的版本与链接为准。 |
+
+以上仅核对页面信息，未检测这些站点的安装包，不据此认定其为盗版、改包或恶意软件。社区 Fork、二创和转载也不因“非官网”身份自动成为盗版。
+
+---
+
 ![Mineradio 暗场启动页](./docs/assets/readme/cinema-beat-smoke.png)
 
 Mineradio 是一款 Windows 桌面沉浸式音乐播放器，把搜索播放、歌词舞台、粒子视觉、3D 歌单架和完整桌面模式组合成一个更接近现场感的私人音乐空间。
@@ -29,20 +74,23 @@ Mineradio 是一款 Windows 桌面沉浸式音乐播放器，把搜索播放、�
 
 ## 立即下载 Windows 安装包
 
-> 安装包可从夸克盘、百度云、蓝奏云或 GitHub Release 手动下载；软件内更新入口仍只打开网盘线路，不读取 Release 附件。
+> 本次下载入口已更换，请使用下面的新网盘链接，并更新旧收藏。通过公告中的网盘入口下载，可以继续使用现有版本；项目目前处于长期停更状态。
 
 | 下载入口 | 推荐人群 | 链接 |
 | --- | --- | --- |
-| 夸克盘 | 夸克用户 | [下载 Mineradio 2.1.0](https://pan.quark.cn/s/df00d9520835) |
-| 百度云 | 百度网盘用户（提取码 `SJHP`） | [下载 Mineradio 2.1.0](https://pan.baidu.com/s/1UAAyvXHNJjxVXAHIPtl4Ow?pwd=SJHP) |
-| 蓝奏云 | 直接下载 | [下载 Mineradio 2.1.0](https://xxhuber.lanzout.com/s/Mineradio) |
-| GitHub Release | GitHub 用户、版本说明与源码 | [下载 Mineradio 2.1.0](https://github.com/XxHuberrr/Mineradio/releases/tag/v2.1.0) |
+| 夸克盘 | 夸克用户 | [下载 Mineradio 2.2.0](https://pan.quark.cn/s/4b124d3e81d3) |
+| 百度云 | 百度网盘用户（提取码 `SJHP`） | [下载 Mineradio 2.2.0](https://pan.baidu.com/s/17CwpHUza67w_Grgc3s5nOw?pwd=SJHP) |
+| GitHub Release | 版本说明与源码 | [查看 Mineradio 2.2.0](https://github.com/XxHuberrr/Mineradio/releases/tag/v2.2.0) |
 
-安装时只需要下载并运行 `Mineradio-2.1.0-Setup.exe`。不要把 `.blockmap`、`latest.yml` 或 `win-unpacked` 当成正式安装包。
+本页、发布公告和软件更新入口使用相同的两条新链接。旧分享地址不再作为本次版本的下载入口。
+
+安装时只需要下载并运行 `Mineradio-2.2.0-Setup.exe`。不要把 `.blockmap`、`latest.yml` 或 `win-unpacked` 当成正式安装包。
+
+2.1.0 用户如果未看到更新提醒，请从托盘彻底退出后重新打开软件，切回普通窗口，等待约 30 秒后查看右上角更新箭头。旧版不会自动弹出公告；也可以直接使用上面的新网盘链接下载安装包。
 
 ## 下载或安装被拦截怎么办
 
-小众 Electron 桌面软件、未签名安装包有时会被浏览器、Windows Defender 或 SmartScreen 提示风险。请先确认安装包来自上面的网盘入口或官方 GitHub Release，文件名是 `Mineradio-2.1.0-Setup.exe`。
+小众 Electron 桌面软件、未签名安装包有时会被浏览器、Windows Defender 或 SmartScreen 提示风险。请先确认安装包来自本次公告的下载入口，文件名是 `Mineradio-2.2.0-Setup.exe`。
 
 1. 浏览器下载栏提示风险时，打开下载列表，点这条下载右侧的 `...` 三个点，选择 `保留` / `仍要保留` / `显示更多` 后继续保留。
 2. Windows SmartScreen 弹出蓝色拦截窗口时，点 `更多信息`，再点 `仍要运行`。
@@ -56,15 +104,15 @@ Mineradio 是一款 Windows 桌面沉浸式音乐播放器，把搜索播放、�
 
 ![Mineradio 作者支持渠道](./docs/assets/support/mineradio-author-support-poster.png)
 
-Mineradio 2.1 进一步优化了壁纸与全屏体验，并提升了登录、账号、本地曲库和长时间运行的稳定性。
+Mineradio 2.2 是历史稳定版本，修复了音乐接口的登录与播放问题，改善歌单加载和网络异常恢复，并加入更多手势操作与粒子预设。
 
 ## 当前版本
 
-当前版本：`2.1.0`
+当前版本：`2.2.0`
 
-状态：Mineradio 2.1.0 正式版。
+状态：Mineradio 2.2.0 历史正式版；项目目前长期停更。
 
-> 安全提示：`v1.0.10` 及更早旧安装包不再建议继续安装或传播。请使用本页提供的 `Mineradio-2.1.0-Setup.exe`。
+> 安全提示：`v1.0.10` 及更早旧安装包不再建议继续安装或传播。请使用本次公告提供的 `Mineradio-2.2.0-Setup.exe`。
 
 ## 核心特性
 
@@ -84,11 +132,11 @@ Mineradio 2.1 进一步优化了壁纸与全屏体验，并提升了登录、账
 
 ## 使用说明
 
-Windows 用户可以从本页列出的夸克盘、百度云、蓝奏云或 GitHub Release 下载安装包。
+Windows 用户可以从本次发布公告列出的新网盘入口下载安装包。
 
-正式分发以 `Mineradio-2.1.0-Setup.exe` 为准，不建议直接使用 `win-unpacked` 目录。安装包会创建桌面快捷方式。
+正式分发以 `Mineradio-2.2.0-Setup.exe` 为准，不建议直接使用 `win-unpacked` 目录。安装包会创建桌面快捷方式。
 
-已经安装过旧版本的用户可直接运行 `Mineradio-2.1.0-Setup.exe` 完成更新。软件内更新入口只会打开浏览器下载页，不会在客户端内下载或应用补丁。
+已经安装过旧版本的用户可直接运行 `Mineradio-2.2.0-Setup.exe` 完成更新。软件内更新入口只会打开浏览器下载页，不会在客户端内下载或应用补丁。
 
 ## 开发运行
 
