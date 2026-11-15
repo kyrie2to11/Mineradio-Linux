@@ -7,7 +7,7 @@
 - `package.json`:新增 `build:linux` 脚本与 `linux` / `deb` / `appImage` 打包配置(deb + AppImage, x64)
 - `.github/workflows/sync-build-linux.yml`:自动同步构建(见下)
 
-上游代码本身对非 Windows 平台已有完善的 `process.platform` 守卫,无需改动业务代码;`build/after-pack.js` 的 rcedit 图标注入也只在 win32 目标执行。
+此外,`desktop/main.js` 在非 Windows 平台使用 ANGLE GL 后端,避免使用 Windows 专属的 d3d11。`build/after-pack.js` 的 rcedit 图标注入仅在 win32 目标执行。
 
 ## 自动同步构建
 

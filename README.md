@@ -1,181 +1,75 @@
-# Mineradio
+# Mineradio Linux
 
-## 🌐 Mineradio 官网：[mineradio.cn](https://mineradio.cn/)
+[Mineradio](https://github.com/XxHuberrr/Mineradio-paused) 的 Linux 适配 fork，自用为主，欢迎取用。本仓库在 `main` 分支维护 Linux 打包配置和运行修复，提供 **x86_64 的 deb 与 AppImage** 安装包。
 
-> [!IMPORTANT]
-> **Mineradio 官网：<https://mineradio.cn/>**
->
-> 请收藏官网，从官网进入下载页，避免误入同名网站或第三方下载页。
-> [官网下载入口](https://mineradio.cn/download.html) · [官网链接的网页版：mineradio.art](https://mineradio.art/)
+Mineradio 是一款融合音乐播放、歌词舞台、粒子视觉与 3D 歌单架的沉浸式音乐播放器。本仓库专注于 Linux；Windows、macOS、Android 和网页版请前往 [Mineradio 官网下载页](https://mineradio.cn/download.html)。
 
-> **项目状态：长期停更**
->
-> 目前因个人原因，Mineradio 项目处于长期停更状态。感兴趣的个人玩家可随意使用本项目进行创作，也可以自行修改和修复 bug。希望各位玩得开心，也希望世界和平，享受我们的音乐。
->
-> 本仓库保留公开源码、历史版本和下载说明，方便个人玩家 Fork、建立分支或制作二创版本。
+## 下载与安装
 
-## 认准官网，避免走错下载页
+前往本仓库的 [Releases](https://github.com/kyrie2to11/Mineradio-Linux/releases)，选择最新 `linux-v*` 版本的附件。请下载与你的系统对应的安装包，不要下载源码压缩包代替安装包。
 
-> [!WARNING]
-> **搜索结果标题中的“官网”“官方版”“最新版”，不代表该页面就是 Mineradio 官网。**
-> 请检查地址栏，认准 **`mineradio.cn`**；安装包与网盘链接请从[官网下载页](https://mineradio.cn/download.html)进入。
-> **已确认冒充官方入口的域名：`mineradiobfq.cn`。请勿误入。**
+### Ubuntu / Debian
 
-### 仿冒官网 / 官方入口：请勿误入
-
-**`mineradiobfq.cn` 不是 Mineradio 官网。请勿从该站下载安装包、提交账号信息或付款；请认准 [mineradio.cn](https://mineradio.cn/)。**
-
-| 仿冒域名（仅供辨识） | 已核查的冒充方式 | 正确入口 |
-| --- | --- | --- |
-| `mineradiobfq.cn` | 页面使用 Mineradio 名称、MR 标识和产品截图；页脚自称“Mineradio官方入口与使用指南站点”，并提供该站自己的网盘下载入口。 | [Mineradio 官网](https://mineradio.cn/) · [官网下载页](https://mineradio.cn/download.html) |
-
-核查日期：**2026-11-09**。以上判定针对“冒充官方身份”，未检测该站安装包，不据此声称其含有恶意程序。域名以纯文本展示，避免误点；同名、相似拼写或加上 `bfq` 等后缀，都不代表官方身份。官网链接的网页版 `mineradio.art` 不在此名单内。
-
-### 第三方软件下载页：认清页面归属
-
-以下是容易混淆的**第三方介绍 / 下载页面示例，并非 Mineradio 官网**。仅供辨识，不作为下载推荐。核查日期：**2026-11-09**。
-
-| 非官网页面 | 页面上的字样或信息 | 如何辨识 |
-| --- | --- | --- |
-| `shouyou.3dmgame.com` · [3DM 页面](https://shouyou.3dmgame.com/android/555111.html) | 标题为“Mineradio 官方版”，列出的版本为 `1.12`。 | 这是 3DM 的软件下载页；“官方版”字样不能证明页面由 Mineradio 官方运营。 |
-| `cr173.com` · [西西页面](https://www.cr173.com/soft/1670750.html) | 标题为“Mineradio音乐软件官方版”，其“官方网站”字段另行指向 `mineradio.cn`。 | 软件站页面与它引用的官网是两个不同入口，请进入官网获取下载信息。 |
-| `5577.com` · [5577 页面](https://www.5577.com/s/735837.html) | 标题含“最新版官方”，其“应用官网”字段指向 `mineradio.cn`。 | 不要仅凭“最新版”字样选包；请以官网下载页公布的版本与链接为准。 |
-
-以上仅核对页面信息，未检测这些站点的安装包，不据此认定其为盗版、改包或恶意软件。社区 Fork、二创和转载也不因“非官网”身份自动成为盗版。
-
----
-
-![Mineradio 暗场启动页](./docs/assets/readme/cinema-beat-smoke.png)
-
-Mineradio 是一款 Windows 桌面沉浸式音乐播放器，把搜索播放、歌词舞台、粒子视觉、3D 歌单架和完整桌面模式组合成一个更接近现场感的私人音乐空间。
-
-> ### 🐧 Linux 构建版(本 fork)
->
-> 本仓库是 [XxHuberrr/Mineradio](https://github.com/XxHuberrr/Mineradio) 的 **Linux 移植 fork**(自用为主,欢迎任何人取用)。官方仅发布 Windows 安装包;Linux 版由 [`main` 分支](https://github.com/kyrie2to11/Mineradio-Linux/tree/main) 添加的打包配置构建,GitHub Actions **每日自动同步上游**,官方发新版后自动产出 deb / AppImage。
->
-> **安装**:到 [Releases](https://github.com/kyrie2to11/Mineradio-Linux/releases) 下载最新 `linux-v*` 的附件——
->
-> ```bash
-> # deb(Ubuntu/Debian,装到 /opt/Mineradio)
-> sudo apt install ./Mineradio-<版本>-amd64.deb
->
-> # 或 AppImage(免安装)
-> chmod +x Mineradio-<版本>-x86_64.AppImage && ./Mineradio-<版本>-x86_64.AppImage
-> ```
->
-> deb 安装后若双击无反应(chrome-sandbox 权限):
-> `sudo chown root:root /opt/Mineradio/chrome-sandbox && sudo chmod 4755 /opt/Mineradio/chrome-sandbox`
->
-> ⚠️ 应用内"检查更新"指向上游的 Windows 包,Linux 下请忽略;升级请继续从本仓库 Releases 下载。移植原理与自行构建见 [README-LINUX.md](README-LINUX.md)。
-
----
-
-*以下为上游原版 README(Windows 版说明):*
-
-## 立即下载 Windows 安装包
-
-> 本次下载入口已更换，请使用下面的新网盘链接，并更新旧收藏。通过公告中的网盘入口下载，可以继续使用现有版本；项目目前处于长期停更状态。
-
-| 下载入口 | 推荐人群 | 链接 |
-| --- | --- | --- |
-| 夸克盘 | 夸克用户 | [下载 Mineradio 2.2.0](https://pan.quark.cn/s/4b124d3e81d3) |
-| 百度云 | 百度网盘用户（提取码 `SJHP`） | [下载 Mineradio 2.2.0](https://pan.baidu.com/s/17CwpHUza67w_Grgc3s5nOw?pwd=SJHP) |
-| GitHub Release | 版本说明与源码 | [查看 Mineradio 2.2.0](https://github.com/XxHuberrr/Mineradio/releases/tag/v2.2.0) |
-
-本页、发布公告和软件更新入口使用相同的两条新链接。旧分享地址不再作为本次版本的下载入口。
-
-安装时只需要下载并运行 `Mineradio-2.2.0-Setup.exe`。不要把 `.blockmap`、`latest.yml` 或 `win-unpacked` 当成正式安装包。
-
-2.1.0 用户如果未看到更新提醒，请从托盘彻底退出后重新打开软件，切回普通窗口，等待约 30 秒后查看右上角更新箭头。旧版不会自动弹出公告；也可以直接使用上面的新网盘链接下载安装包。
-
-## 下载或安装被拦截怎么办
-
-小众 Electron 桌面软件、未签名安装包有时会被浏览器、Windows Defender 或 SmartScreen 提示风险。请先确认安装包来自本次公告的下载入口，文件名是 `Mineradio-2.2.0-Setup.exe`。
-
-1. 浏览器下载栏提示风险时，打开下载列表，点这条下载右侧的 `...` 三个点，选择 `保留` / `仍要保留` / `显示更多` 后继续保留。
-2. Windows SmartScreen 弹出蓝色拦截窗口时，点 `更多信息`，再点 `仍要运行`。
-3. 如果杀毒软件明确显示木马、高危或已经隔离，不要强行运行；删除该文件后重新从上面的网盘入口下载，仍然异常请带截图反馈给作者。
-
-## 作者支持
-
-如果 Mineradio 陪你多听了一首歌，也欢迎请作者一杯咖啡。
-
-[查看完整支持页](./docs/SUPPORT.md)
-
-![Mineradio 作者支持渠道](./docs/assets/support/mineradio-author-support-poster.png)
-
-Mineradio 2.2 是历史稳定版本，修复了音乐接口的登录与播放问题，改善歌单加载和网络异常恢复，并加入更多手势操作与粒子预设。
-
-## 当前版本
-
-当前版本：`2.2.0`
-
-状态：Mineradio 2.2.0 历史正式版；项目目前长期停更。
-
-> 安全提示：`v1.0.10` 及更早旧安装包不再建议继续安装或传播。请使用本次公告提供的 `Mineradio-2.2.0-Setup.exe`。
-
-## 核心特性
-
-- 首页包含每日推荐、平台推荐、继续听、听歌画像和我的歌单入口
-- 完整桌面模式保留播放器、主页、歌单和桌面交互
-- 支持本地 MP4 与 Wallpaper Engine 视觉内容
-- 播放后切换到 Emily / 默认播放态视觉，歌词舞台与粒子舞台同步工作
-- 基于节奏的电影镜头视觉系统
-- 面向长播客和 DJ 曲目的专属视觉模式
-- 歌词舞台、自定义歌词、歌词位置与视觉控制
-- 自定义专辑封面上传与裁剪
-- 右键唤起 3D 歌单架，支持歌单队列浏览
-- 网易云音乐账号、搜索、歌单、播客等体验接入
-- QQ 音乐搜索、登录态与音源补充接入
-- GitHub Releases 更新检测与下载入口
-- 首次启动内置「默认测试」视觉用户存档，软件内默认视觉参数与该存档一致
-
-## 使用说明
-
-Windows 用户可以从本次发布公告列出的新网盘入口下载安装包。
-
-正式分发以 `Mineradio-2.2.0-Setup.exe` 为准，不建议直接使用 `win-unpacked` 目录。安装包会创建桌面快捷方式。
-
-已经安装过旧版本的用户可直接运行 `Mineradio-2.2.0-Setup.exe` 完成更新。软件内更新入口只会打开浏览器下载页，不会在客户端内下载或应用补丁。
-
-## 开发运行
+下载 `Mineradio-<版本>-amd64.deb`，在下载目录中安装（将版本号替换为实际文件名）：
 
 ```bash
-npm install
-npm start
-npm run build:win
+sudo apt install ./Mineradio-<版本>-amd64.deb
 ```
 
-桌面版入口由 Electron 主进程加载本地服务。`npm run build:win` 会生成 Windows NSIS 安装包，产物位于 `dist/`。
+程序安装到 `/opt/Mineradio`，可通过应用菜单启动。
 
-## 更新机制
+### AppImage
 
-Mineradio 会请求 GitHub Releases latest 检测新版本。远端版本高于本地版本时，应用内更新入口会展示 Release 内容，并通过系统浏览器打开可选网盘线路；即使 Release 附带完整安装包，`2.0.3+` 客户端也不会读取、下载、缓存或应用该附件与补丁。
+下载 `Mineradio-<版本>-x64.AppImage`，添加执行权限后运行：
 
-本地验证更新链路时，可以通过 `MINERADIO_UPDATE_MANIFEST` 指向一个本地 manifest JSON 或 HTTP 地址来模拟线上 Release。
+```bash
+chmod +x Mineradio-<版本>-x64.AppImage
+./Mineradio-<版本>-x64.AppImage
+```
 
-## 第三方音乐平台说明
+AppImage 无需安装；实际文件名请以 Release 附件为准。
 
-Mineradio 不是网易云音乐、QQ 音乐或腾讯音乐娱乐集团的官方客户端，也不隶属于任何音乐平台。
+## 更新
 
-项目中的第三方平台接入仅用于个人学习、本地客户端体验和用户自有账号的播放辅助。请遵守对应平台的用户协议、版权规则和会员权益规则。项目不会提供绕过付费、绕过会员、破解音质或重新分发音乐内容的能力。
+Linux 版请从[本仓库 Releases](https://github.com/kyrie2to11/Mineradio-Linux/releases) 获取新版 deb 或 AppImage。应用内的更新入口沿用上游配置，不作为本 fork 的 Linux 更新渠道。
 
-## 用户数据与隐私
+GitHub Actions 每天北京时间 **04:23** 尝试合并上游 `main`，保留 Linux 适配改动；当对应 `linux-v<版本>` 标签尚不存在时，自动构建并发布安装包。推送 `main` 或手动运行工作流也会触发检查。同版本已有标签时，默认跳过构建。
 
-登录 Cookie、搜索历史、自定义封面、自定义歌词、节奏分析缓存等数据只应保存在本机用户数据目录或浏览器本地存储中，不应提交到仓库。
+上游目前声明长期停更；自动同步不代表上游会持续发布新版。若同步产生冲突，需要手动解决后才能继续。
 
-更多说明见 [PRIVACY.md](./PRIVACY.md)。
+## 本地运行与构建
 
-## 致谢
+建议使用 Node.js 22，与自动构建环境一致。
 
-Mineradio 由 XxHuberrr 主要设计与打造。emily 作为早期视觉底层想法与 `emily` 视觉预设改进方向的共创者和灵感来源之一，特此感谢。
+```bash
+npm ci
+npm start
+```
 
-同时感谢小天才e宝、应春日、锋将军、軌跡、林中、骊、风痕、花椰菜🥦在早期体验、测试反馈和发布准备中的帮助。
+构建 Linux 安装包：
 
-## 版权与授权
+```bash
+npm run build:linux
+```
 
-Copyright (C) 2026 XxHuberrr.
+产物位于 `dist/`，包括 deb 与 AppImage，目前打包目标为 x86_64。
 
-本项目采用 GPL-3.0 授权。详见 [LICENSE](./LICENSE)。
+## Linux 适配说明
 
-MR Logo、Mineradio 名称、界面视觉设计与原创视觉表达归作者所有；第三方依赖和第三方服务分别遵循其各自授权与服务条款。
+- 增加 Linux 打包配置、桌面入口和 deb 依赖声明。
+- 非 Windows 平台使用 ANGLE GL 后端，避免使用 Windows 专属的 Direct3D 11 后端。
+- 在 `main` 分支自动合并上游更新，并构建 Linux 安装包。
+
+Windows 专属的桌面集成功能不应视为 Linux 版的功能承诺。更多维护与构建细节见 [README-LINUX.md](README-LINUX.md)。
+
+## 反馈
+
+Linux 安装、启动或打包问题请提交到[本仓库 Issues](https://github.com/kyrie2to11/Mineradio-Linux/issues)，并附上发行版、桌面环境、软件版本与终端报错。
+
+## 致谢与授权
+
+Mineradio 原项目由 **XxHuberrr** 及其贡献者开发；本仓库维护 Linux 适配。移植方案受到 [jade2-fff/Mineradio-for-linux](https://github.com/jade2-fff/Mineradio-for-linux) 启发。
+
+Copyright (C) 2026 XxHuberrr. 本项目沿用 GPL-3.0 授权，详见 [LICENSE](LICENSE) 和 [NOTICE.md](NOTICE.md)。Mineradio 名称、标识及原创视觉表达的权利归原作者所有。
+
+隐私说明见 [PRIVACY.md](PRIVACY.md)。请遵守第三方音乐平台的服务条款与版权规则。
