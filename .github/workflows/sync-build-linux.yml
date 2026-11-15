@@ -11,7 +11,7 @@ on:
         type: boolean
         default: false
   push:
-    branches: [linux]
+    branches: [main]
 
 permissions:
   contents: write
@@ -24,10 +24,10 @@ jobs:
   sync-and-build:
     runs-on: ubuntu-24.04
     steps:
-      - name: Checkout linux branch
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: linux
+          ref: main
           fetch-depth: 0
 
       - name: Merge upstream main
@@ -49,12 +49,10 @@ jobs:
             git log --oneline "$before..$after" | head -20
           fi
 
-      - name: Push linux branch and fast-forward main
+      - name: Push merged main branch
         if: steps.merge.outputs.changed == 'true'
         run: |
-          git push origin linux
-          git push origin upstream/main:refs/heads/main || \
-            echo '::warning::fork main has diverged from upstream; fast-forward skipped'
+          git push origin main
 
       - name: Detect version and release tag
         id: ver
@@ -99,7 +97,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.ver.outputs.tag }}
-          target_commitish: linux
+          target_commitish: main
           name: Mineradio ${{ steps.ver.outputs.version }} (Linux)
           body: |
             Automated Linux build (deb + AppImage) for Mineradio ${{ steps.ver.outputs.version }}.

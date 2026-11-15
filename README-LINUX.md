@@ -1,6 +1,6 @@
 # Mineradio Linux 移植说明
 
-本分支(`linux`)在官方 [XxHuberrr/Mineradio](https://github.com/XxHuberrr/Mineradio) `main` 的基础上,添加了 Linux 打包配置与自动同步构建,由 [jade2-fff/Mineradio-for-linux](https://github.com/jade2-fff/Mineradio-for-linux) 的移植方案启发(该仓库停留在 1.1.1)。
+本仓库的 `main` 分支在官方 [XxHuberrr/Mineradio](https://github.com/XxHuberrr/Mineradio) `main` 的基础上,添加了 Linux 打包配置与自动同步构建,由 [jade2-fff/Mineradio-for-linux](https://github.com/jade2-fff/Mineradio-for-linux) 的移植方案启发(该仓库停留在 1.1.1)。
 
 ## 包含的改动
 
@@ -14,14 +14,14 @@
 Workflow 每天 04:23(北京时间)运行:
 
 1. 拉取 upstream `XxHuberrr/Mineradio` 的 `main` 并合并进本分支
-2. 有新提交则推送,并尝试快进 fork 的 `main`
+2. 有新提交则推送,更新 fork 的 `main`
 3. 检测 `package.json` 版本号;若 `linux-v<version>` release 尚不存在,则构建 deb + AppImage 并发布 release
 4. 版本没变(上游只是小改动)则只同步不构建
 
 手动操作:
 
 - **强制重新构建**:Actions → Sync upstream & build Linux → Run workflow,勾选 `force_build`
-- **合并冲突**:若上游改动了 `package.json` 的打包段导致自动合并失败,workflow 会挂掉;本地解决冲突后推送 `linux` 分支即可恢复
+- **合并冲突**:若上游改动了 `package.json` 的打包段导致自动合并失败,workflow 会挂掉;本地解决冲突后推送 `main` 分支即可恢复
 
 ## 本地构建
 

@@ -51,7 +51,7 @@ Mineradio 是一款 Windows 桌面沉浸式音乐播放器，把搜索播放、�
 
 > ### 🐧 Linux 构建版(本 fork)
 >
-> 本仓库是 [XxHuberrr/Mineradio](https://github.com/XxHuberrr/Mineradio) 的 **Linux 移植 fork**(自用为主,欢迎任何人取用)。官方仅发布 Windows 安装包;Linux 版由 [`linux` 分支](https://github.com/kyrie2to11/Mineradio-Linux/tree/linux) 添加的打包配置构建,GitHub Actions **每日自动同步上游**,官方发新版后自动产出 deb / AppImage。
+> 本仓库是 [XxHuberrr/Mineradio](https://github.com/XxHuberrr/Mineradio) 的 **Linux 移植 fork**(自用为主,欢迎任何人取用)。官方仅发布 Windows 安装包;Linux 版由 [`main` 分支](https://github.com/kyrie2to11/Mineradio-Linux/tree/main) 添加的打包配置构建,GitHub Actions **每日自动同步上游**,官方发新版后自动产出 deb / AppImage。
 >
 > **安装**:到 [Releases](https://github.com/kyrie2to11/Mineradio-Linux/releases) 下载最新 `linux-v*` 的附件——
 >
@@ -66,7 +66,7 @@ Mineradio 是一款 Windows 桌面沉浸式音乐播放器，把搜索播放、�
 > deb 安装后若双击无反应(chrome-sandbox 权限):
 > `sudo chown root:root /opt/Mineradio/chrome-sandbox && sudo chmod 4755 /opt/Mineradio/chrome-sandbox`
 >
-> ⚠️ 应用内"检查更新"指向上游的 Windows 包,Linux 下请忽略;升级请继续从本仓库 Releases 下载。移植原理与自行构建见 [`linux` 分支的 README-LINUX.md](https://github.com/kyrie2to11/Mineradio-Linux/blob/linux/README-LINUX.md)。
+> ⚠️ 应用内"检查更新"指向上游的 Windows 包,Linux 下请忽略;升级请继续从本仓库 Releases 下载。移植原理与自行构建见 [README-LINUX.md](README-LINUX.md)。
 
 ---
 
