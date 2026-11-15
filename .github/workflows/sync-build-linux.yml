@@ -1,0 +1,119 @@
+name: Sync upstream & build Linux
+
+on:
+  schedule:
+    # daily at 20:23 UTC = 04:23 Beijing time
+    - cron: '23 20 * * *'
+  workflow_dispatch:
+    inputs:
+      force_build:
+        description: 'Force build & release even if version tag already exists'
+        type: boolean
+        default: false
+  push:
+    branches: [linux]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-build-linux
+  cancel-in-progress: false
+
+jobs:
+  sync-and-build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout linux branch
+        uses: actions/checkout@v4
+        with:
+          ref: linux
+          fetch-depth: 0
+
+      - name: Merge upstream main
+        id: merge
+        run: |
+          set -e
+          git config user.name 'mineradio-linux-sync'
+          git config user.email 'actions@users.noreply.github.com'
+          git remote add upstream https://github.com/XxHuberrr/Mineradio.git
+          git fetch upstream main
+          before=$(git rev-parse HEAD)
+          git merge upstream/main --no-edit
+          after=$(git rev-parse HEAD)
+          if [ "$before" = "$after" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Upstream sync brought new commits:"
+            git log --oneline "$before..$after" | head -20
+          fi
+
+      - name: Push linux branch and fast-forward main
+        if: steps.merge.outputs.changed == 'true'
+        run: |
+          git push origin linux
+          git push origin upstream/main:refs/heads/main || \
+            echo '::warning::fork main has diverged from upstream; fast-forward skipped'
+
+      - name: Detect version and release tag
+        id: ver
+        run: |
+          version=$(node -p "require('./package.json').version")
+          tag="linux-v${version}"
+          if git ls-remote --exit-code --tags origin "refs/tags/${tag}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+
+      - name: Decide whether to build
+        id: decide
+        run: |
+          if [ '${{ steps.ver.outputs.exists }}' = 'false' ] || [ '${{ github.event.inputs.force_build }}' = 'true' ]; then
+            echo "build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "build=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing to build: Mineradio ${{ steps.ver.outputs.version }} already released as ${{ steps.ver.outputs.tag }}."
+          fi
+
+      - name: Setup Node.js
+        if: steps.decide.outputs.build == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        if: steps.decide.outputs.build == 'true'
+        run: npm ci
+
+      - name: Build Linux packages
+        if: steps.decide.outputs.build == 'true'
+        run: npm run build:linux
+
+      - name: Create GitHub release
+        if: steps.decide.outputs.build == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.ver.outputs.tag }}
+          target_commitish: linux
+          name: Mineradio ${{ steps.ver.outputs.version }} (Linux)
+          body: |
+            Automated Linux build (deb + AppImage) for Mineradio ${{ steps.ver.outputs.version }}.
+
+            Synced from [XxHuberrr/Mineradio](https://github.com/XxHuberrr/Mineradio) `main`.
+
+            Install (deb):
+            ```
+            sudo apt install ./Mineradio-${{ steps.ver.outputs.version }}-amd64.deb
+            ```
+            If the app fails to start after install (chrome-sandbox permissions):
+            ```
+            sudo chown root:root /opt/Mineradio/chrome-sandbox && sudo chmod 4755 /opt/Mineradio/chrome-sandbox
+            ```
+          files: |
+            dist/*.deb
+            dist/*.AppImage

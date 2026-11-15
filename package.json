@@ -11,7 +11,8 @@
     "start": "electron .",
     "build:win": "electron-builder --win nsis",
     "build:win:dir": "electron-builder --win dir",
-    "build:win:internal-beta": "electron-builder --config electron-builder.internal-beta.json --win nsis --publish never"
+    "build:win:internal-beta": "electron-builder --config electron-builder.internal-beta.json --win nsis --publish never",
+    "build:linux": "electron-builder --linux deb AppImage --publish never"
   },
   "build": {
     "appId": "com.mineradio.desktop",
@@ -73,6 +74,45 @@
       "installerHeader": "build/installerHeader.bmp",
       "include": "build/installer.nsh",
       "artifactName": "Mineradio-${version}-Setup.${ext}"
+    },
+    "linux": {
+      "icon": "build/icon.png",
+      "category": "AudioVideo",
+      "executableName": "mineradio",
+      "mimeTypes": ["audio/mpeg", "audio/mp3", "audio/flac"],
+      "maintainer": "Mineradio",
+      "desktop": {
+        "entry": {
+          "Name": "Mineradio",
+          "Comment": "沉浸式音乐播放器，融合天气电台、歌词舞台、粒子视觉和 3D 歌单架。",
+          "StartupWMClass": "Mineradio",
+          "Categories": "AudioVideo;Audio;Player;"
+        }
+      },
+      "target": [
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "appImage": {
+      "artifactName": "Mineradio-${version}-${arch}.AppImage"
+    },
+    "deb": {
+      "artifactName": "Mineradio-${version}-amd64.deb",
+      "depends": [
+        "libgtk-3-0", "libnotify4", "libnss3", "libxss1",
+        "libxtst6", "xdg-utils", "libatspi2.0-0", "libdrm2", "libgbm1"
+      ]
     },
     "publish": [
       {
